@@ -52,7 +52,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="images/demo.gif" alt="demo" width="cover" height="auto" style = "border-radous=50px">
+<img src="images/demo.gif" alt="demo" width="1920" height="auto">
 
 
 E2E LanternAuto is a Playwright-based project designed to facilitate comprehensive end-to-end testing. This project aims to provide a streamlined setup for automating the lantern regression pack over on the TestRail Test management platform, this will enable more efficient and effective testing strategies.
@@ -104,27 +104,27 @@ _For complete usage details, please refer to the [Documentation](https://github.
 #### 🚀 Running Tests
 Note: Add --headed to have it run in a headed browser. Execute these commands to run your tests:
 
-##### Runs all tests within tests folder 
+Runs all tests within tests folder:
 ```bash
 npx playwright test 
 ```
 
-##### Runs test with 3 workers (browsers) in parallel 
+Runs test with 3 workers (browsers) in parallel:
 ```bash
 npx playwright test --workers 3
 ```
 
-##### Run specific test file (replace '/example.spec.js' with your file name)
+Run specific test file (replace '/example.spec.js' with your file name):
 ```bash
 npx playwright test tests/example.spec.js 
 ```
 
-##### Run specific test file (replace 'example' with your file name)
+Run specific test file (replace 'example' with your file name):
 ```bash
 npx playwright test tests example
 ```
 
-##### Run specific test within the test file by title (replace 'title' with your test name)
+Run specific test within the test file by title (replace 'title' with your test name):
 ```bash
 npx playwright test -g "title"
 ```
@@ -199,11 +199,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Wilson - [Your LinkedIn](https://linkedin.com/in/your-linkedin)
+Wilson: (QA Test Engineer) 📥 [Slack](https://lantern-ai.slack.com/team/U05QCFALNV7)
 
-Project Link: [https://github.com/lantern-wilson/E2E-LanternAuto](https://github.com/lantern-wilson/E2E-LanternAuto)
-
-<p align="right">(<a href="#readme-top">back to top</a>)
+Project Link: 🔗 [https://github.com/lantern-wilson/E2E-LanternAuto](https://github.com/lantern-wilson/E2E-LanternAuto)
 
 </p>
 
@@ -214,7 +212,7 @@ Project Link: [https://github.com/lantern-wilson/E2E-LanternAuto](https://github
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="center">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
