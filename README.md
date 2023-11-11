@@ -5,19 +5,19 @@
 <!--
 *** Reference links for the badges
 -->
-[![LinkedIn][linkedin-shield]][linkedin-url]
+<!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/lantern-wilson/E2E-LanternAuto">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/lantern_logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">E2E LanternAuto - Playwright Project</h3>
+  <h3 align="center">E2E LanternAuto - 🎭 Playwright </h3>
 
   <p align="center">
-    A comprehensive Playwright setup for End-to-End testing!
+    A comprehensive Playwright setup for End-to-End automation testing!
     <br />
     <a href="https://github.com/lantern-wilson/E2E-LanternAuto"><strong>Explore the docs »</strong></a>
     <br />
@@ -52,15 +52,23 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![E2E LanternAuto Screen Shot][product-screenshot]](https://example.com)
+<img src="images/demo.gif" alt="demo" width="1920" height="auto">
 
-E2E LanternAuto is a Playwright-based project designed to facilitate comprehensive end-to-end testing. This project aims to provide a streamlined setup for Playwright, enabling efficient and effective testing strategies.
+
+E2E LanternAuto is a Playwright-based project designed to facilitate comprehensive end-to-end testing. This project aims to provide a streamlined setup for automating the lantern regression pack over on the TestRail Test management platform, this will enable more efficient and effective testing strategies.
 
 ### Built With
+[![JavaScript][JavaScript.shield]][JavaScript-url] [![Playwright][Playwright.dev]][Playwright-url]
 
-* [![Playwright][Playwright.dev]][Playwright-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- MARKDOWN LINKS & IMAGES -->
+[Playwright.dev]: https://img.shields.io/badge/Playwright-52A7F9?style=for-the-badge&logo=playwright&logoColor=white
+[Playwright-url]: https://playwright.dev/
+[JavaScript.shield]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -84,7 +92,7 @@ To get started with E2E LanternAuto, follow these simple steps.
    ```
 2. Make choices for language (JavaScript), tests directory, GitHub Actions, and browser downloads during the install.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -93,14 +101,100 @@ Utilize the project for end-to-end testing with Playwright. Here's how you can r
 
 _For complete usage details, please refer to the [Documentation](https://github.com/lantern-wilson/E2E-LanternAuto)_
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+#### 🚀 Running Tests
+Note: Add --headed to have it run in a headed browser. Execute these commands to run your tests:
+
+##### Runs all tests within tests folder 
+```bash
+npx playwright test 
+```
+
+##### Runs test with 3 workers (browsers) in parallel 
+```bash
+npx playwright test --workers 3
+```
+
+##### Run specific test file (replace '/example.spec.js' with your file name)
+```bash
+npx playwright test tests/example.spec.js 
+```
+
+##### Run specific test file (replace 'example' with your file name)
+```bash
+npx playwright test tests example
+```
+
+##### Run specific test within the test file by title (replace 'title' with your test name)
+```bash
+npx playwright test -g "title"
+```
+
+#### 📊 Test Reports
+Generate and inspect an HTML report of your tests:
+```bash
+npx playwright show-report
+```
+
+#### 🐛 Debug Mode
+Run Tests in debug mode:
+```bash
+npx playwright test --debug
+```
+
+#### Trace (UI For Debugging)
+To turn on/off via command line:
+```bash
+npx playwright test --trace on
+```
+
+#### 🎞️ Record Mode
+This will allow you to manually execute the test and the codegen will generate the code for you.
+```bash
+npx playwright codegen
+
+# Emulate an iPhone in Record Mode
+npx playwright codegen --device="iPhone 14"
+```
+
+#### 🖥️ UI Mode
+Enhance your development experience by running tests in UI mode:
+```bash
+npx playwright test --ui
+```
+
+#### ⌛️ Updating Playwright
+Update to the latest version of Playwright using:
+```bash
+npm install -D @playwright/test@latest
+```
+
+#### 🧐 Verify your Playwright version:
+```bash
+npx playwright --version
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- CONTACT -->
 ## Contact
@@ -121,6 +215,7 @@ Project Link: [https://github.com/lantern-wilson/E2E-LanternAuto](https://github
 * [Img Shields](https://shields.io)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/lantern-wilson/E2E-LanternAuto.svg?style=for-the-badge
