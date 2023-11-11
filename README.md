@@ -1,7 +1,3 @@
-Sure, let's adapt the template to your Playwright project. I'll incorporate your project details into the structure provided:
-
----
-
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 
@@ -146,5 +142,3 @@ Project Link: [https://github.com/lantern-wilson/E2E-LanternAuto](https://github
 [product-screenshot]: images/screenshot.png
 [Playwright.dev]: https://img.shields.io/badge/Playwright-52A7F9?style=for-the-badge&logo=playwright&logoColor=white
 [Playwright-url]: https://playwright.dev/
-
----
