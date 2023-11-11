@@ -14,7 +14,7 @@
     <img src="images/lantern_logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h1 align="center">E2E LanternAuto - 🎭 Playwright </h1>
+  <h3 align="center">E2E LanternAuto - 🎭 Playwright </h3>
 
   <p align="center">
     A comprehensive Playwright setup for End-to-End automation testing!
@@ -51,8 +51,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-<img src="images/demo.gif" alt="demo" width="1920" height="auto">
+<img src="images/header.png" alt="header" width="1990" height="auto">
 
 
 E2E LanternAuto is a Playwright-based project designed to facilitate comprehensive end-to-end testing. This project aims to provide a streamlined setup for automating the lantern regression pack over on the TestRail Test management platform, this will enable more efficient and effective testing strategies.
@@ -231,3 +230,4 @@ Project Link: 🔗 [https://github.com/lantern-wilson/E2E-LanternAuto](https://g
 [product-screenshot]: images/screenshot.png
 [Playwright.dev]: https://img.shields.io/badge/Playwright-52A7F9?style=for-the-badge&logo=playwright&logoColor=white
 [Playwright-url]: https://playwright.dev/
+
