@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# Test results and reports
+test-results/
+playwright-report/
+blob-report/
+
+# Playwright cache
+playwright/.cache/
+
+# Add any additional files or directories that you want to ignore
+# For instance, environment files or local configuration files
+.env
