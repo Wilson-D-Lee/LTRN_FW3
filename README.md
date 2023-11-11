@@ -200,7 +200,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Wilson: (QA Test Engineer) 📥 [Slack](https://lantern-ai.slack.com/team/U05QCFALNV7)
 
-Project Link: 🔗 [github](https://github.com/lantern-wilson/E2E-LanternAuto)
+Project Link: 🔗 [Github](https://github.com/lantern-wilson/E2E-LanternAuto)
 
 </p>
 
