@@ -100,7 +100,7 @@ Utilize the project for end-to-end testing with Playwright. Here's how you can r
 
 _For complete usage details, please refer to the [Documentation](https://github.com/lantern-wilson/E2E-LanternAuto)_
 
-#### 🚀 Running Tests
+### 🚀 Running Tests
 Note: Add --headed to have it run in a headed browser. Execute these commands to run your tests:
 
 Runs all tests within tests folder:
@@ -128,25 +128,25 @@ Run specific test within the test file by title (replace 'title' with your test 
 npx playwright test -g "title"
 ```
 
-#### 📊 Test Reports
+### 📊 Test Reports
 Generate and inspect an HTML report of your tests:
 ```bash
 npx playwright show-report
 ```
 
-#### 🐛 Debug Mode
+### 🐛 Debug Mode
 Run Tests in debug mode:
 ```bash
 npx playwright test --debug
 ```
 
-#### Trace (UI For Debugging)
+### Trace (UI For Debugging)
 To turn on/off via command line:
 ```bash
 npx playwright test --trace on
 ```
 
-#### 🎞️ Record Mode
+### 🎞️ Record Mode
 This will allow you to manually execute the test and the codegen will generate the code for you.
 ```bash
 npx playwright codegen
@@ -155,37 +155,22 @@ npx playwright codegen
 npx playwright codegen --device="iPhone 14"
 ```
 
-#### 🖥️ UI Mode
+### 🖥️ UI Mode
 Enhance your development experience by running tests in UI mode:
 ```bash
 npx playwright test --ui
 ```
 
-#### ⌛️ Updating Playwright
+### ⌛️ Updating Playwright
 Update to the latest version of Playwright using:
 ```bash
 npm install -D @playwright/test@latest
 ```
 
-#### 🧐 Verify your Playwright version:
+### 🧐 Verify your Playwright version:
 ```bash
 npx playwright --version
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!-- LICENSE -->
