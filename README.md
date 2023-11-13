@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/lantern-wilson/E2E-LanternAuto">
-    <img src="images/lantern_logo.png" alt="Logo" width="80" height="80">
+    <img src="images/lantern_logo.png" alt="Logo" width="120" height="120">
   </a>
 
   <h3 align="center">E2E LanternAuto - 🎭 Playwright </h3>
