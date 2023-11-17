@@ -6,21 +6,10 @@ exports.LoginPage = class LoginPage {
         this.signin_button = page.getByRole('button', { name: 'Sign in' });
     }
 
-    async basic_user_login(email, password) {
+    async user_login(email, password) {
         await this.username_input.fill(email);
         await this.password_input.fill(password);
         await this.signin_button.click();
     }
 
-    async admin_user_login(email, password) {
-        await this.username_input.fill(email);
-        await this.password_input.fill(password);
-        await this.signin_button.click();
-    }
-
-    async company_user_login(email, password) {
-        await this.username_input.fill(email);
-        await this.password_input.fill(password);
-        await this.signin_button.click();
-    }
 }

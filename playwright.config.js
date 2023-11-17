@@ -4,7 +4,7 @@ module.exports = defineConfig({
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 5 : undefined,
   retries: 2, //Number of retries before fail
 
   // Reporter configuration
@@ -12,8 +12,8 @@ module.exports = defineConfig({
 
     ['html', { open: 'always' }] //'always', 'never', or 'on-failure'.
 
-
   ],
+
 
   // Global test settings
   use: {
