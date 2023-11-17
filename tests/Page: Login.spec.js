@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../pages/login-page.js');
 const { AuthPage } = require('../pages/auth-page.js'); // Assuming users.js contains user credentials
+const {TOTP} = require('otpauth'); 
 const { basicUser, adminUser, companyUser, sec1pwd, sec2pwd } = require('../Users/users.js'); // Assuming users.js contains user credentials
 require('dotenv').config();
 
@@ -45,8 +46,6 @@ test.describe('@Story: Login Functionality', () => {
   });
 });
 
-
-
 test.describe('@Story: Authentication Functionality', () => {
 
   test.beforeEach(async ({ page }) => {
@@ -57,10 +56,14 @@ test.describe('@Story: Authentication Functionality', () => {
   });
 
 
-  // test('@Test:C203 | Successful Authentication', async ({ page }) => {
-  //   const authPage = new AuthPage(page);
-  //   await authPage.enterAuthCode(process.env.USER_AUTHCODE); // Using auth code from environment variable
-  //   await expect(page.locator('text=Active funds')).toBeVisible({ timeout: 60000 });
-  // });
+  test('@Test:C203 | Successful Authentication', async ({ page }) => {
+
+      const authPage = new AuthPage(page);
+      await authPage.generateAndEnterTOTP('basic'); // Use 'admin' for admin user
+
+      // Check for successful login
+      await expect(page.locator('text=Active funds')).toBeVisible({ timeout: 60000 });
+    
+  });
 
 });
