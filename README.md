@@ -91,12 +91,17 @@ To get started with E2E LanternAuto, follow these simple steps.
    ```
 2. Make choices for language (JavaScript), tests directory, GitHub Actions, and browser downloads during the install.
 
+### Demo
+
+<img src="images/demo.gif" alt="header" width="1990" height="auto">
+
+
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Key Commands
 
-Utilize the project for end-to-end testing with Playwright. Here's how you can run tests, generate reports, and more:
+Here's how you can run tests, generate reports, and more:
 
 _For complete usage details, please refer to the [Documentation](https://github.com/lantern-wilson/E2E-LanternAuto)_
 

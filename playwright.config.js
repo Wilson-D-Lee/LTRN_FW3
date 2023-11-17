@@ -5,6 +5,7 @@ module.exports = defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   workers: process.env.CI ? 1 : undefined,
+  retries: 2, //Number of retries before fail
 
   // Reporter configuration
   reporter: [
@@ -16,10 +17,11 @@ module.exports = defineConfig({
 
   // Global test settings
   use: {
-    baseURL: 'https://app.uat.app.lantern.ai/#state=...',
+    baseURL: 'https://app.uat.app.lantern.ai/',
     headless: false,
     trace: 'on-first-retry',
     video: 'retain-on-failure',
+    actionTimeout: 10000,
     // Other global settings
   },
 
@@ -33,7 +35,7 @@ module.exports = defineConfig({
     },
 
     // {
-    //   name: 'firefox',
+    //   name: 'Firefox',
     //   use: { ...devices['Desktop Firefox'] },
     // },
 
