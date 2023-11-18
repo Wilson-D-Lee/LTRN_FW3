@@ -11,8 +11,8 @@ test.describe('@Story: User Administration', () => {
     const loginPage = new LoginPage(page);
     const authPage = new AuthPage(page);
     await loginPage.user_login(adminUser, sec1pwd);
-    await page.waitForSelector('text=Enter the verification code from your authenticator app.');
     await authPage.generateAndEnterTOTP('admin'); 
+
   });
 
 

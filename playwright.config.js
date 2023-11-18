@@ -9,11 +9,9 @@ module.exports = defineConfig({
 
   // Reporter configuration
   reporter: [
-
-    ['html', { open: 'always' }] //'always', 'never', or 'on-failure'.
-
+    ['html', { open: 'always' }], // 'always', 'never', or 'on-failure'.
+    ['list'], // Default reporter
   ],
-
 
   // Global test settings
   use: {
@@ -21,9 +19,10 @@ module.exports = defineConfig({
     headless: false,
     trace: 'on-first-retry',
     video: 'retain-on-failure',
-    actionTimeout: 10000,
+    actionTimeout: 10000
     // Other global settings
   },
+
 
   /* Configure projects for major browsers */
   projects: [
