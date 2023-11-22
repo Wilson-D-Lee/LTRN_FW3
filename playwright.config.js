@@ -20,7 +20,6 @@ module.exports = defineConfig({
     trace: 'on-first-retry',
     video: 'retain-on-failure',
     actionTimeout: 10000
-    
     // Other global settings
   },
 
@@ -34,15 +33,15 @@ module.exports = defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    // {
-    //   name: 'Firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+    {
+      name: 'Firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
 
-    // {
-    //   name: 'Safari',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
+    {
+      name: 'Safari',
+      use: { ...devices['Desktop Safari'] },
+    },
 
 
     // 👇 Uncomment to enable the different mobiles 
