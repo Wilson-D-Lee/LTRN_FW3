@@ -20,6 +20,7 @@ module.exports = defineConfig({
     trace: 'on-first-retry',
     video: 'retain-on-failure',
     actionTimeout: 10000
+    
     // Other global settings
   },
 
