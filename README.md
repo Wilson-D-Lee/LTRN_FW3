@@ -139,6 +139,10 @@ Generate and inspect an HTML report of your tests:
 npx playwright show-report
 ```
 
+```bash
+npx allure serve allure-results                   
+```
+
 ### 🐛 Debug Mode
 Run Tests in debug mode:
 ```bash

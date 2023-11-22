@@ -1,22 +1,24 @@
 const { defineConfig, devices } = require('@playwright/test');
+const { testPlanFilter } = require("allure-playwright/dist/testplan");
 
 module.exports = defineConfig({
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   workers: process.env.CI ? 5 : undefined,
-  retries: 2, //Number of retries before fail
+  retries: 3, //Number of retries before fail
+  grep: testPlanFilter(),
 
   // Reporter configuration
   reporter: [
-    ['html', { open: 'always' }], // 'always', 'never', or 'on-failure'.
-    ['list'], // Default reporter
+    ['html', { open: 'on-failure' }],['list'],// 'always', 'never', or 'on-failure'. 
+    ['line'], ['allure-playwright'],// Default reporter
   ],
 
   // Global test settings
   use: {
     baseURL: 'https://app.uat.app.lantern.ai/',
-    headless: false,
+    headless: true,
     trace: 'on-first-retry',
     video: 'retain-on-failure',
     actionTimeout: 10000
@@ -29,30 +31,30 @@ module.exports = defineConfig({
 
     // 👇 Uncomment to enable the different browsers 
     {
-      name: 'Chrome',
+      name: '🖥️ Chrome',
       use: { ...devices['Desktop Chrome'] },
     },
 
     {
-      name: 'Firefox',
+      name: '🖥️ Firefox',
       use: { ...devices['Desktop Firefox'] },
     },
 
     {
-      name: 'Safari',
+      name: '🖥️ Safari',
       use: { ...devices['Desktop Safari'] },
     },
 
 
     // 👇 Uncomment to enable the different mobiles 
     // {
-    //   name: 'Mobile Chrome',
+    //   name: '📱 Chrome',
     //   use: { ...devices['Pixel 5'] },
     // },
 
     // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
+    //   name: '📱 Safari',
+    //   use: { ...devices['iPhone 13'] },
     // },
 
 
