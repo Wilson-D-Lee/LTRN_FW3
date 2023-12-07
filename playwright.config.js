@@ -5,8 +5,9 @@ module.exports = defineConfig({
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  workers: process.env.CI ? 5 : undefined,
-  retries: 3, //Number of retries before fail
+  // workers: process.env.CI ? 1 : undefined,
+  workers: 5,
+  retries: 0, //Number of retries before fail
   grep: testPlanFilter(),
 
   // Reporter configuration
@@ -18,7 +19,7 @@ module.exports = defineConfig({
   // Global test settings
   use: {
     baseURL: 'https://app.uat.app.lantern.ai/',
-    headless: true,
+    headless: false,
     trace: 'on-first-retry',
     video: 'retain-on-failure',
     actionTimeout: 10000
@@ -35,15 +36,15 @@ module.exports = defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: '🖥️ Firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: '🖥️ Firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: '🖥️ Safari',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: '🖥️ Safari',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
 
     // 👇 Uncomment to enable the different mobiles 
