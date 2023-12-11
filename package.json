@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "## Introduction",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "clear-allure": "rimraf allure-results/*",
+    "run-test": "npx playwright test",
+    "test": "npm run clear-allure && npm run run-test"
+  },
+  
   "keywords": [],
   "author": "Wilson D. Lee",
   "license": "ISC",
@@ -11,7 +16,8 @@
     "@playwright/test": "^1.39.0",
     "@types/node": "^20.9.0",
     "allure-commandline": "^2.24.1",
-    "allure-playwright": "^2.9.2"
+    "allure-playwright": "^2.9.2",
+    "rimraf": "^5.0.5"
   },
   "dependencies": {
     "dotenv": "^16.3.1",

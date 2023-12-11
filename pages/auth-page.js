@@ -35,5 +35,4 @@ exports.AuthPage = class AuthPage {
     async enterAuthCode(authCode) {
         await this.authcode_input.fill(authCode);
         await this.verify_button.click();
-    }
-}
+    } }

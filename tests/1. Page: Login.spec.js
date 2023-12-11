@@ -1,68 +1,73 @@
 const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../pages/login-page');
-const { AuthPage } = require('../pages/auth-page.js'); 
-const { basicUser, adminUser, companyUser, sec2pword } = require('../Users/users.js'); 
+const { AuthPage } = require('../pages/auth-page.js');
+const { basicUser, adminUser, companyUser, sec2pword } = require('../Users/users.js');
 require('dotenv').config();
 
-test.describe('@Story: Login Functionality', () => {
+let sharedPage;
 
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/')
+test.describe.serial('@Login', () => {
+
+  test.beforeAll(async ({ browser }) => {
+    const context = await browser.newContext();
+    sharedPage = await context.newPage();
+    await sharedPage.goto('/');
   });
 
-  test('@Test:C204 | Empty Email Field', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test.afterEach(async () => {
+    await sharedPage.reload();
+  });
+
+  test('T1 - Empty Email Field', async () => {
+    const loginPage = new LoginPage(sharedPage);
     await loginPage.user_login('', sec2pword);
+    // Add assertions as necessary
   });
 
-  test('@Test:C205 | Empty Password Field', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test('T2 - Empty Password Field', async () => {
+    const loginPage = new LoginPage(sharedPage);
     await loginPage.user_login(basicUser, '');
   });
 
-  test('@Test:C197 | Inval@Test Email Error', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test('T3 - Inval@Test Email Error', async () => {
+    const loginPage = new LoginPage(sharedPage);
     await loginPage.user_login('inval@Test_email@lantern.ai', sec2pword);
-    await page.waitForSelector('text=We can\'t seem to find your account.');
+    await sharedPage.waitForSelector('text=We can\'t seem to find your account.');
   });
 
-  test('@Test:C199 | Inval@Test Password Error', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test('T4 - Inval@Test Password Error', async () => {
+    const loginPage = new LoginPage(sharedPage);
     await loginPage.user_login(basicUser, 'inval@Test_password');
-    await page.waitForSelector('text=Your password is incorrect.');
+    await sharedPage.waitForSelector('text=Your password is incorrect.');
   });
 
-  test('@Test:C198 | Non lantern Email', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test('T5 - Non lantern Email', async () => {
+    const loginPage = new LoginPage(sharedPage);
     await loginPage.user_login('wilson@gmail.com', sec2pword);
-    await page.waitForSelector('text=We can\'t seem to find your account.');
+    await sharedPage.waitForSelector('text=We can\'t seem to find your account.');
   });
 
-  test('@Test:C200 | Successful Login Redirect', async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test('T6 - Successful Login Redirect', async () => {
+    const loginPage = new LoginPage(sharedPage);
     await loginPage.user_login(basicUser, sec2pword);
-    await page.waitForSelector('text=Enter the verification code from your authenticator app.');
+    await sharedPage.waitForSelector('text=Enter the verification code from your authenticator app.');
   });
 });
 
-test.describe('@Story: Authentication Functionality', () => {
+test.describe('Authentication', () => {
 
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/')
-    const loginPage = new LoginPage(page);
+  test.beforeAll(async ({ browser }) => {
+    const context = await browser.newContext();
+    sharedPage = await context.newPage();
+    await sharedPage.goto('/');
+    const loginPage = new LoginPage(sharedPage);
     await loginPage.user_login(basicUser, sec2pword);
-    await page.waitForSelector('text=Enter the verification code from your authenticator app.');
+    await sharedPage.waitForSelector('text=Enter the verification code from your authenticator app.');
   });
 
-
-  test('@Test:C203 | Successful Authentication', async ({ page }) => {
-
-      const authPage = new AuthPage(page);
-      await authPage.generateAndEnterTOTP('basic'); // Use 'admin' for admin user
-
-      // Check for successful login
-      await expect(page.locator('text=Active funds')).toBeVisible({ timeout: 60000 });
-    
+  test('T7 - Successful Authentication', async () => {
+    const authPage = new AuthPage(sharedPage);
+    await authPage.generateAndEnterTOTP('basic'); // Use 'admin' for admin user
+    await expect(sharedPage.locator('text=Active funds')).toBeVisible({ timeout: 60000 });
   });
-
 });

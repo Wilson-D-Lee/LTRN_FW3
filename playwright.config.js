@@ -6,7 +6,7 @@ module.exports = defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   // workers: process.env.CI ? 1 : undefined,
-  workers: 5,
+  workers: 1,
   retries: 0, //Number of retries before fail
   grep: testPlanFilter(),
 
@@ -32,17 +32,17 @@ module.exports = defineConfig({
 
     // 👇 Uncomment to enable the different browsers 
     {
-      name: '🖥️ Chrome',
+      name: 'Chrome',
       use: { ...devices['Desktop Chrome'] },
     },
 
     // {
-    //   name: '🖥️ Firefox',
+    //   name: 'Firefox',
     //   use: { ...devices['Desktop Firefox'] },
     // },
 
     // {
-    //   name: '🖥️ Safari',
+    //   name: 'Safari',
     //   use: { ...devices['Desktop Safari'] },
     // },
 
