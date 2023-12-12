@@ -9,7 +9,7 @@ require('dotenv').config();
 let sharedPage; // Declare sharedPage
 let adminPage;
 
-test.describe.serial('Tab: Users Administration', () => {
+test.describe.serial('👨‍💼 Tab: Users Administration', () => {
   test.beforeAll(async ({ browser }) => {
     // Login to admin
     const context = await browser.newContext();
@@ -32,10 +32,6 @@ test.describe.serial('Tab: Users Administration', () => {
 
   test.afterEach(async () => {
     await sharedPage.reload();
-  });
-
-  test.afterAll(async ({ browser }) => {
-    await browser.close();
   });
 
   test('T1 - Invite admin user', async () => {
@@ -63,7 +59,7 @@ test.describe.serial('Tab: Users Administration', () => {
 
 });
 
-test.describe.serial('Tab: Template Configuration', () => {
+test.describe.serial('📋 Tab: Template Configuration', () => {
   let adminPage;
 
   test.beforeAll(async ({ browser }) => {
@@ -344,7 +340,7 @@ test.describe.serial('Tab: Template Configuration', () => {
 
 }); 
 
-test.describe.serial('Tab: Workflow Configuration', () => {
+test.describe.serial('🗂️ Tab: Workflow Configuration', () => {
   test.beforeAll(async ({ browser }) => {
     // Login to admin
     const context = await browser.newContext();
@@ -375,11 +371,11 @@ test.describe.serial('Tab: Workflow Configuration', () => {
     await browser.close();
   });
 
-  test('Add Workflow (Cancel btn)', async () => {
+  test('[ Cancel ] New Workflow ', async () => {
     await sharedPage.pause()
   });
 
-  test('Add a new Workflow', async () => {
+  test('[ Add ] New Workflow', async () => {
     await sharedPage.pause()
   });
 

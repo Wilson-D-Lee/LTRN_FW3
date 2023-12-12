@@ -76,6 +76,11 @@ test.describe('🔒 Authentication', () => {
     
   });
 
+  test.afterAll(async ({ browser }) => {
+    // Login to admin
+    await browser.close();
+  });
+
   test('T7 - Successful Authentication', async () => {
     // Authentication 
     const authPage = new AuthPage(sharedPage);

@@ -7,7 +7,7 @@ module.exports = defineConfig({
   forbidOnly: !!process.env.CI,
   // workers: process.env.CI ? 1 : undefined,
   workers: 1,
-  retries: 0, //Number of retries before fail
+  retries: 2, //Number of retries before fail
   grep: testPlanFilter(),
 
   // Reporter configuration

@@ -6,7 +6,7 @@
   "scripts": {
     "clear-allure": "rimraf allure-results/*",
     "run-test": "npx playwright test",
-    "test": "npm run clear-allure && npm run run-test"
+    "test": "npm run clear-allure, npm run run-test"
   },
   
   "keywords": [],
