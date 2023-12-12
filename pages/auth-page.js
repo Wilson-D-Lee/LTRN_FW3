@@ -35,4 +35,7 @@ exports.AuthPage = class AuthPage {
     async enterAuthCode(authCode) {
         await this.authcode_input.fill(authCode);
         await this.verify_button.click();
+
+        //if error is visible, wait 10 seconds, refresh and input authcode again.
+
     } }

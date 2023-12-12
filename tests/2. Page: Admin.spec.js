@@ -85,17 +85,10 @@ test.describe.serial('📋 Tab: Template Configuration', () => {
   });
 
   test.afterEach(async () => {
-    await sharedPage.locator('li').filter({ hasText: 'Hello Admin: Wilson!wilson+admin@lantern.aiUser administrationData collection ad' }).getByRole('button').click();
-    await sharedPage.locator('li').filter({ hasText: 'Data collection administration' }).nth(1).click();
-  });
-
-  test.afterAll(async ({ browser }) => {
-    await browser.close();
+    await sharedPage.goto('https://app.uat.app.lantern.ai/admin/data-collection/template-configuration')
   });
 
   //Template Configuration High Level Functionality 
-
-
   test('T1 - [ Add, Update, Delete ] (Lantern) Template', async () => {
     //Add New Template 
     const TemplateName = adminPage.generateTemplateName();
@@ -318,6 +311,7 @@ test.describe.serial('📋 Tab: Template Configuration', () => {
 
     //Cancel button  
     await sharedPage.getByRole('button', { name: 'Cancel' }).click();
+    
     //Assertion
     
 
@@ -367,9 +361,9 @@ test.describe.serial('🗂️ Tab: Workflow Configuration', () => {
     await sharedPage.reload();
   });
 
-  test.afterAll(async ({ browser }) => {
-    await browser.close();
-  });
+  // test.afterAll(async ({ browser }) => {
+  //   await browser.close();
+  // });
 
   test('[ Cancel ] New Workflow ', async () => {
     await sharedPage.pause()

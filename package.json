@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "## Introduction",
   "main": "index.js",
+
   "scripts": {
     "clear-allure": "rimraf allure-results/*",
     "run-test": "npx playwright test",
-    "test": "npm run clear-allure, npm run run-test"
+    "test": "npm run clear-allure && npm run run-test"
   },
+  
   
   "keywords": [],
   "author": "Wilson D. Lee",
