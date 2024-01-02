@@ -225,3 +225,4 @@ Project Link: 🔗 [Github](https://github.com/lantern-wilson/E2E-LanternAuto)
 [Playwright.dev]: https://img.shields.io/badge/Playwright-52A7F9?style=for-the-badge&logo=playwright&logoColor=white
 [Playwright-url]: https://playwright.dev/
 
+# LTRN_FW3
