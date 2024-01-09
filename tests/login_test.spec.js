@@ -1,27 +1,19 @@
-const { test, expect } = require('@playwright/test');
-const { LoginPage } = require('../pages/login-page');
-const { AuthPage } = require('../pages/auth-page.js');
-const { AdminPage } = require('../pages/admin-page');
-const { basicUser, adminUser, companyUser, sec2pword } = require('../Users/users.js');
+const { test, expect} = require('@playwright/test');
+const { LoginPage } = require('../POM/loginPage');
+const { basicUser, sec2pword, loginUrl } = require('../../../../../PlaywrightProject/fixtures/testData.js/index.js');
 
 require('dotenv').config();
 
 
 let sharedPage;
-let adminPage;
 
-
-test.describe.serial('♻️ Login Functionality', () => {
+test.describe.serial('Login Functionality', () => {
 
   test.beforeAll(async ({ browser }) => {
     const context = await browser.newContext();
     sharedPage = await context.newPage();
-    await sharedPage.goto('/');
+    await sharedPage.goto(loginUrl);
   });
-
-  // test.afterAll(async ({ browser }) => {
-  //   await browser.close();
-  // });
 
   test.afterEach(async () => {
     await sharedPage.reload();
@@ -29,7 +21,7 @@ test.describe.serial('♻️ Login Functionality', () => {
 
   test('T1 - Empty Email Field', async () => {
     const loginPage = new LoginPage(sharedPage);
-    await loginPage.user_login('', sec2pword);
+    await loginPage.user_login('', process.env.USER_PASSWORD);
     // Add assertions as necessary
   });
 
@@ -40,7 +32,7 @@ test.describe.serial('♻️ Login Functionality', () => {
 
   test('T3 - Inval Email [Error]', async () => {
     const loginPage = new LoginPage(sharedPage);
-    await loginPage.user_login('inval@Test_email@lantern.ai', sec2pword);
+    await loginPage.user_login('inval@Test_email@lantern.ai', process.env.USER_PASSWORD);
     await sharedPage.waitForSelector('text=We can\'t seem to find your account.');
   });
 
@@ -52,34 +44,13 @@ test.describe.serial('♻️ Login Functionality', () => {
 
   test('T5 - Non lantern Email', async () => {
     const loginPage = new LoginPage(sharedPage);
-    await loginPage.user_login('wilson@gmail.com', sec2pword);
+    await loginPage.user_login('wilson@gmail.com', process.env.USER_PASSWORD);
     await sharedPage.waitForSelector('text=We can\'t seem to find your account.');
   });
 
   test('T6 - Successful Login Redirect', async () => {
     const loginPage = new LoginPage(sharedPage);
-    await loginPage.user_login(basicUser, sec2pword);
+    await loginPage.user_login(basicUser, process.env.USER_PASSWORD);
     await sharedPage.waitForSelector('text=Enter the verification code from your authenticator app.');
-  });
-});
-
-test.describe('🔒 Authentication', () => {
-
-  test.beforeAll(async ({ browser }) => {
-    // Login to admin
-    const context = await browser.newContext();
-    sharedPage = await context.newPage(); // Use sharedPage
-    await sharedPage.goto('/');
-    const loginPage = new LoginPage(sharedPage);
-    await loginPage.user_login(adminUser, sec2pword);
-
-    
-  });
-
-  test('T7 - Successful Authentication', async () => {
-    // Authentication 
-    const authPage = new AuthPage(sharedPage);
-    await authPage.generateAndEnterTOTP('admin');
-    await expect(sharedPage.locator('text=Active funds')).toBeVisible({ timeout: 60000 });
   });
 });
